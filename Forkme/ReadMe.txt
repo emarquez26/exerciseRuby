@@ -1,4 +1,5 @@
-Exercise 1
+e2_metaprograming_excersise_1
+
 Could you get the values from outside the class A ?
 class A
   def initialize
@@ -19,7 +20,8 @@ este ejercico trata de mostar las variables fuera de la clase en las que se encu
 33
 -se puede ejecutar poniendo: ruby e2_metaprograming_excersise_1.rb
 
-Exercise 2
+e2_metaprograming_excersise_1
+
 Add your code to display 'I like metaprogramming.'
 class I
   def like arg
