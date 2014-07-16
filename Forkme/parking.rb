@@ -50,7 +50,19 @@ end
             
             rs.each do |row|
                 puts row.join "\s"
-            end     
+            end
+            puts "Digite placa a ver"
+            numerpl=gets.chomp.to_s
+            n="#{a.hour}#{a.min}"
+
+            File.open("#{numerpl}.txt", 'r') do |f1|
+                while linea = f1.gets
+                    hrtot=n.to_i-linea.to_i
+                    puts "El total a pagar es: #{hrtot*100}"
+                end
+            end
+            sql="DELETE FROM Cars_nom WHERE Name='#{numerpl}'"
+            db.execute(sql)
         rescue SQLite3::Exception => e 
             
             puts "Exception occured"
@@ -59,18 +71,6 @@ end
             stm.close if stm
             db.close if db
         end
-        puts "Digite placa a ver"
-        numerpl=gets.chomp.to_s
-        n="#{a.hour}#{a.min}"
-
-        File.open("#{numerpl}.txt", 'r') do |f1|
-            while linea = f1.gets
-                hrtot=n.to_i-linea.to_i
-                puts hrtot*100
-            end
-        end
-        sql="DELETE FROM Cars_nom WHERE Name='#{numerpl}.txt'"
-        db.execute(sql)
     end
 end
 a=Time.now
