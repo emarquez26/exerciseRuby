@@ -1,1 +1,2 @@
-El ejercicio inicia en morseruby.rb y los documentos morsetext.rb y textmorse.rb contienen el código de la conversión a sus opciones elegidas al momento de iniciarlo escoge la opción “texto-morse” si quiere convertir la palabra degitada a código morse o puede escoger “morse-texto” para convertir código morse en una palabra
+
+El ejercicio inicia en morseruby.rb y los documentos morsetext.rb y textmorse.rb contienen el c—digo de la conversi—n a sus opciones elegidas al momento de iniciarlo escoge la opci—n Òtexto-morseÓ si quiere convertir la palabra degitada a c—digo morse o puede escoger Òmorse-textoÓ para convertir c—digo morse en una palabra
