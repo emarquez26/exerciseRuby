@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<style>
@@ -6,20 +5,34 @@
 	span{ background:rgb(230,191,161); display:inline-block; border-radius:3px;}
 	</style>
 	<title>calculator</title>
+	<script type="text/javascript">
+	  function myFunction(n1){
+		var numero = n1
+	    var resultado = 1;
+	 
+		for(var i=1; i<=numero; i++) {
+		  resultado *= i;
+		}
+		alert(resultado);}
+	</script>
 </head>
 <body>
-	<input id="expression" placeholder="1+2"/>
-	<div id="result"></div>
- 
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script>
-	$('#expression').keyup(function(){
-			$.get('/calc',{
-				exp:$('#expression').val()
-			},function(r){
-				$('#result').html(r);
-			});
-	});
-	</script>
+	<form action="/calculator" method="post" name="cal">
+		<input id="expression" placeholder="1+2" name='numbers'/>
+		<div id="result"></div>
+	 
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script>
+		$('#expression').keyup(function(){
+				$.get('/calc',{
+					exp:$('#expression').val()
+				},function(r){
+					$('#result').html(r);
+				});
+		});
+		</script>
+		<input type="submit" name='raiz' value="Raiz">
+		<input type="button" name='faltorial' value="Factorial" onclick="document.cal.action = '/calculator/factorial';document.cal.submit()">
+    </form>
 </body>
 </html>

@@ -10,6 +10,16 @@ get '/calc' do
 	begin
 		eval(params['exp']).to_s
 	rescue
-		'Your expression is invalid'
+		'Solo debe insertar numeros seguido del signo a realizar operacion ej:1+2-3'
 	end
+end
+#obtiene la raiz cuadrada del numero
+post '/calculator' do
+  "La raiz cuadrada es: #{Math.sqrt(params[:numbers].to_i)}"
+end
+#obtiene el factorial
+post '/calculator/factorial' do
+	num = 1
+  1.upto(eval(params[:numbers])){ |x| num *= x }
+  "#{num}"
 end
