@@ -1,0 +1,6 @@
+<h3>Digite palabra a mostrar en codigo morse</h3>
+<form action="/cdmorse" method="post" name="morse">
+  <input type="text" name="morse" style="width:80%"><br>
+  <input type="submit" value="Convertir letras a codigo morse">
+  <input type="button" value="Convertir morse a letras" onclick="document.morse.action = '/cdmorse/morse';document.morse.submit()">
+</form>
