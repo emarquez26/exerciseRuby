@@ -1,6 +1,6 @@
 require 'sinatra'
+require 'sqlite3'
 include Math
-load 'e2_displayRuby.rb'
 #se accede medieante la url 'localhost:4567/calculator' 
 get '/calculator' do
   erb :calcu
@@ -30,6 +30,7 @@ get '/display' do
 end
 #obtiene el valor del numero a mostrar
 post '/display' do
+  load 'e2_displayRuby.rb'
   params[:display].display
 end
 #se accede mediante la url 'localhost:4567/cdmorse'
@@ -44,4 +45,21 @@ end
 post '/cdmorse/morse' do
 	load 'morsetext.rb'
   	"<h2>#{params[:morse].obtplb}</h2>"
+end
+#se accede mediante la url 'localhost:4567/parking'
+get '/parking' do
+	erb :parking
+end
+post '/parking/new' do
+	load 'parkinglot.rb'
+	newcar= Carro.new
+	plc=params[:rgtr]
+	newcar.newc(plc)
+	redirect '/parking'
+end
+post '/parking/delete' do
+	load 'parkinglot.rb'
+	newcar= Carro.new
+	plc=params[:rgtr]
+	newcar.delet(plc)
 end

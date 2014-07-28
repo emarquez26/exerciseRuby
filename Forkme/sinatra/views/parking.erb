@@ -1,0 +1,38 @@
+<% require 'sqlite3'
+load 'parkinglot.rb' %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parking</title>
+</head>
+<body>
+	<form action='/parking' method="post" name="parking">
+		<center>
+			<h3>--------Welcome to Parking lot---------</h3><br>
+			<input type="text" name="rgtr" placeholder='Digite placa del auto a guardar ej:qwe123' style="width:75%"><br>
+			<input type="button" value="Guardar Auto" onclick="document.parking.action = '/parking/new';document.parking.submit()">
+			<input type="button" value="Cheking de autos" onclick="document.parking.action = '/parking/delete';document.parking.submit()">
+			<input type="button" value="Ver lista de autos" onclick="document.parking.action = '/parking/wacth';document.parking.submit()">
+		</center><br><br>
+	</form>
+	<% list= Carro.new.whatching %>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>Numero de Placa</td>
+				<td>Hora Ingreso</td>
+				<td>Total a Pagar</td>
+				<td>Cheackout</td>
+			</tr>
+		</thead>
+		<% list.each do |r| %>
+		<tbody>
+			<tr>
+				<td><%= r["name"].to_s %></td>
+				<td><%= r["time"].to_s %></td>
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+</body>
+</html>
