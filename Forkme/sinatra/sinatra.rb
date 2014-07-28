@@ -62,4 +62,18 @@ post '/parking/delete' do
 	newcar= Carro.new
 	plc=params[:rgtr]
 	newcar.delet(plc)
+	redirect '/parking'
+end
+get '/delete/*' do
+	load 'parkinglot.rb'
+	newcar= Carro.new
+	newcar.delet(params[:splat].join('').to_s)
+	redirect '/parking'
+end
+get '/scrapper' do
+	erb :scrapper
+end
+post '/scrapper' do
+	load 'rubyscrapper.rb'
+	params[:scrapper].rubyscapper
 end
