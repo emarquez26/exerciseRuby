@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nomina-Ingresar Empleado</title>
+	<link rel="stylesheet" type="text/css" href="style/styleweb.css">
+</head>
+<body>
+	<form action="/agregar_empl" method="post" name="save">
+		<center>
+			<div id="nm">
+	      		<h3>√ Registro de Empleado</h3>
+	    	</div><br>
+	    	<nav>
+	      	<nav>
+				<li class="lin"><a href="/savemp">Agregar Empleado</a></li><br>
+				<li class="lin"><a href="/watchemp">Ver salario de Empleado</a></li>
+			</nav><div class='clear'></div><br>
+			<div id='ew'>
+	    		<div class="fom"><br>
+	      			<br>
+	      				<div class="img">
+	      					<img src="images/emp.png">
+	      				</div>
+		      		<p><label>Nombre del Empleado <input type="text" class="borde" name="name" value="" /></label></p>
+		      		<p><label>Apellido del Empleado <input type="text" class="borde" name="apll" /></label></p>
+		      		<p><label>Identificacion del Empleado <input type="text" class="borde" name="id" value="" /></label></p>
+		      		<p><label>Telefono del Empleado <input type="text" class="borde" name="tel" value="" /></label></p>
+		      		<p><label>E-mail del Empleado <input type="text" class="borde" name="mail" value="" /></label></p>
+		      		<p><label>Cargo del Empleado <input type="text" class="borde" name="carge" value="" /></label></p>
+		      		<p><label>Valor hora de Trabajo <input type="text" class="borde" name="vlhrs" value="" /></label></p>
+		      		<p><label>Horas Trabajadas por el Empleado <input type="text" class="borde" name="hrtrab" value="" /></label></p>
+		      		<input type="button" value="Guardar Empleado" onclick="document.save.action = '/savemp/new';document.save.submit()" class="btn">
+		      	</div>
+	    	</div>
+		</center>
+	</form>
+</body>
+</html>

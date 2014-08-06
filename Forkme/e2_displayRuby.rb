@@ -5,7 +5,7 @@ class Display
 
 		chars = str.scan(/./)
 		@rsp=""; @rsp2=""; @rsp3=""
-		b=chars.each do |char|
+		chars.each do |char|
 			case char.to_i
 			    when 0
 					@rsp+=" --  "
