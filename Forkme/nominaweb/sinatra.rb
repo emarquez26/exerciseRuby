@@ -3,6 +3,9 @@ require 'sqlite3'
 load '_form/database.rb'
 #set :port, 3000
 set :public_folder, '_form'
+get '/' do
+  File.read('views/index.html.erb')
+end
 get '/savemp' do
   File.read('views/savemp.html.erb')
 end
