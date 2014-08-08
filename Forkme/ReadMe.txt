@@ -29,4 +29,7 @@ class I
   end
 end
 
+
 c, m, arg = gets.split  # input 'I like metaprogramming.'
+
+
