@@ -16,7 +16,6 @@ post '/savemp/new' do
   nom=params[:name]; aplld=params[:apll]; id=params[:id]; telfn=params[:tel];
   mail=params[:mail]; cargo=params[:carge]; vlhr=params[:vlhrs]; hrtr=params[:hrtrab]
   newemp.newc(nom, aplld, id, telfn, mail, cargo, vlhr, hrtr)
-  app=application.new.info(vlhr, hrtr)
   redirect '/savemp'
 end
 

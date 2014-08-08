@@ -94,7 +94,7 @@ nav li:hover{
    background-color: #cccccc;
 }
 table{
-	border: hidden;
+	  border: none;
 }
 table, th, td{
 	text-align: center;
